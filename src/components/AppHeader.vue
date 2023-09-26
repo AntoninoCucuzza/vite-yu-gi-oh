@@ -22,7 +22,11 @@ export default {
 <style lang="scss" scoped>
 header {
     color: white;
-    background-color: rgba(0, 0, 0, 0.800);
+    position: fixed;
+    width: 100%;
+    z-index: 60;
+    background-color: #000000e6;
+    box-shadow: 0 0px 10px 5px #000000bf;
     height: 100px;
 
     h1 {
@@ -30,7 +34,7 @@ header {
     }
 
     img {
-        filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff);
+        filter: drop-shadow(0 0 2px #d7dace) drop-shadow(0 0 2px #ffe9b3) drop-shadow(0 0 2px #ffdc74) drop-shadow(0 0 2px #ffc176);
     }
 }
 </style>

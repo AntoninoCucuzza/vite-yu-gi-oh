@@ -39,13 +39,15 @@ export default {
 
 <style lang="scss" scoped >
 main {
-    background-color: black;
+    background-image: url(../assets/img/hieroglyphs-bg.png);
     color: whitesmoke;
-    padding: 2rem;
+    padding: 8rem 2rem;
+
 
     .options {
         padding: 0.5rem 2rem;
-        margin: 0.5rem;
+        margin: 1rem 0rem;
+
         border-radius: 5px;
 
     }

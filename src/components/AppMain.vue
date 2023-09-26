@@ -13,17 +13,23 @@ export default {
     },
 
 }
-</script>
+</script>   
 
 <template>
     <main>
         <div class="container">
+            <select class="options">
+                <option>Alien</option>
+            </select>
             <div class="row">
-                <div class="col-3">
-                    <div class="card">
-                        <h1>{{ cards.cardName }}</h1>
-                        <h2>{{ cards.cardType }}</h2>
-                        <img class="img-fluid" :src="cards.cardImg" alt="...">
+                <div class="found">
+                    <h1>Founds n cards</h1>
+                </div>
+                <div class="col-3 g-3" v-for="card in cards.listCards" v-show="card.archetype === 'Alien'">
+                    <div class="cards">
+                        <img class="img-fluid" :src="card.card_images[0].image_url" :alt="card.name">
+                        <h4>{{ card.name }}</h4>
+                        <span>{{ card.archetype }}</span>
                     </div>
                 </div>
             </div>
@@ -31,4 +37,23 @@ export default {
     </main>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped >
+main {
+    background-color: black;
+    color: whitesmoke;
+    padding: 2rem;
+
+    .options {
+        padding: 0.5rem 2rem;
+        margin: 0.5rem;
+        border-radius: 5px;
+
+    }
+
+    .found {
+        background-color: whitesmoke;
+        color: black;
+    }
+
+}
+</style>

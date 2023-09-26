@@ -1,7 +1,22 @@
 <script >
+import AppHeader from './components/AppHeader.vue';
+export default {
+  name: 'App',
+  data() {
+    return {
+      message: 'we',
+    }
+  },
+  components: {
+    AppHeader,
+  },
+
+}
 
 </script>
 
-<template></template>
+<template>
+  <AppHeader />
+</template>
 
 <style scoped></style>

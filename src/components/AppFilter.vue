@@ -9,16 +9,20 @@ export default {
         }
     },
     created() {
+        cards.fetchData()
         cards.fetchArchetypes()
+
     },
+    emits: ['changeFilterOption']
 
 }
 </script>
 
 <template>
-    <select class="options">
+    <select class="options" v-model="cards.filterOption" @change="$emit('changeFilterOption')">
         <option value="" disabled selected>Choose An Archetype</option>
-        <option v-for="archetype in cards.listArchetypes" value="">{{ archetype.archetype_name }}</option>
+        <option v-for="archetype in cards.listArchetypes" :value="archetype.archetype_name">{{ archetype.archetype_name }}
+        </option>
     </select>
 </template>
 

@@ -1,18 +1,31 @@
 <script >
 import AppFilter from './AppFilter.vue';
+import { cards } from '../cards';
 
 AppFilter
 export default {
     name: 'AppHeader',
     data() {
         return {
-
+            cards
         }
+    },
+    created() {
+        cards.fetchData()
+        cards.fetchArchetypes()
     },
     components: {
         AppFilter
-    }
+    },
+    methods: {
+        lookingFor() {
 
+            console.log(cards.filterOption)
+            cards.base_url = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${cards.filterOption}&num=500&offset=0`
+            console.log(cards.base_url);
+
+        }
+    }
 
 }
 
@@ -25,7 +38,7 @@ export default {
             <h1>yu-gi-oh api</h1>
         </div>
         <div>
-            <AppFilter />
+            <AppFilter @changeFilterOption="lookingFor()" />
         </div>
     </header>
 </template>

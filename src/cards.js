@@ -7,6 +7,7 @@ export const cards = reactive({
 
   listCards: null,
   listArchetypes: null,
+  filterOption: '',
 
   fetchData() {
     axios
@@ -15,7 +16,7 @@ export const cards = reactive({
 
         this.listCards = response.data.data
 
-        console.log(this.listCards);
+        //console.log(this.listCards);
 
       })
       .catch(error => {
@@ -30,7 +31,8 @@ export const cards = reactive({
 
         this.listArchetypes = archetypes.data
 
-        console.log(this.listArchetypes);
+
+        //console.log(this.listArchetypes);
 
       })
       .catch(error => {

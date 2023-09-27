@@ -13,9 +13,16 @@ export default {
 </script>
 
 <template>
-    <header class="d-flex align-items-center ">
-        <img width="200" class="img-fluid ms-5 me-3" src="../assets/img/yu-gi-oh-logo.png" alt="">
-        <h1>yu-gi-oh api</h1>
+    <header class="d-flex align-items-center justify-content-between">
+        <div class="d-flex">
+            <img width="200" class="img-fluid ms-5 me-3" src="../assets/img/yu-gi-oh-logo.png" alt="">
+            <h1>yu-gi-oh api</h1>
+        </div>
+        <div>
+            <select class="options">
+                <option>Alien</option>
+            </select>
+        </div>
     </header>
 </template>
 
@@ -28,6 +35,13 @@ header {
     background-color: #000000e6;
     box-shadow: 0 0px 10px 5px #000000bf;
     height: 100px;
+
+    .options {
+        padding: 0.5rem 2rem;
+        margin-right: 3rem;
+        border-radius: 5px;
+
+    }
 
     h1 {
         text-transform: uppercase;

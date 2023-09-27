@@ -1,11 +1,17 @@
 <script >
+import AppFilter from './AppFilter.vue';
+
+AppFilter
 export default {
     name: 'AppHeader',
     data() {
         return {
-            message: 'we'
+
         }
     },
+    components: {
+        AppFilter
+    }
 
 
 }
@@ -19,9 +25,7 @@ export default {
             <h1>yu-gi-oh api</h1>
         </div>
         <div>
-            <select class="options">
-                <option>Alien</option>
-            </select>
+            <AppFilter />
         </div>
     </header>
 </template>

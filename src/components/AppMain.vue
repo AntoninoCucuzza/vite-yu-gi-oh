@@ -12,10 +12,13 @@ export default {
     },
     created() {
         cards.fetchData()
+
     },
     components: {
         AppCard,
     },
+
+
 
 }
 </script>   
@@ -29,6 +32,7 @@ export default {
                 </div>
                 <AppCard v-for="card in cards.listCards" :cardName="card.name" :cardImg="card.card_images[0].image_url"
                     :cardArchetype="card.archetype" />
+
             </div>
         </div>
     </main>
@@ -40,6 +44,7 @@ main {
     color: whitesmoke;
     padding: 8rem 2rem;
     padding-bottom: 2rem;
+    min-height: 100vh;
 
 
     .found {

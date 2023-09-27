@@ -18,12 +18,14 @@ export default {
         AppFilter
     },
     methods: {
+
         lookingFor() {
+            const newUrl = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${cards.filterOption}&num=500&offset=0`;
+            this.cards.base_url = newUrl
+            cards.fetchData(newUrl)
 
+            console.log(newUrl);
             console.log(cards.filterOption)
-            cards.base_url = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${cards.filterOption}&num=500&offset=0`
-            console.log(cards.base_url);
-
         }
     }
 
@@ -38,7 +40,7 @@ export default {
             <h1>yu-gi-oh api</h1>
         </div>
         <div>
-            <AppFilter @changeFilterOption="lookingFor()" />
+            <AppFilter @performSearch="lookingFor()" />
         </div>
     </header>
 </template>

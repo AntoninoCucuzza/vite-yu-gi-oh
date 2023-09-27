@@ -3,6 +3,7 @@ import { cards } from '../cards';
 
 export default {
     name: 'AppFilter',
+    emits: ['performSearch'],
     data() {
         return {
             cards
@@ -13,13 +14,12 @@ export default {
         cards.fetchArchetypes()
 
     },
-    emits: ['changeFilterOption']
 
 }
 </script>
 
 <template>
-    <select class="options" v-model="cards.filterOption" @change="$emit('changeFilterOption')">
+    <select class="options" v-model="cards.filterOption" @change="$emit('performSearch')">
         <option value="" disabled selected>Choose An Archetype</option>
         <option v-for="archetype in cards.listArchetypes" :value="archetype.archetype_name">{{ archetype.archetype_name }}
         </option>

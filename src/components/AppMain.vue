@@ -27,9 +27,8 @@ export default {
                 <div class="found">
                     <h1>Founds n cards</h1>
                 </div>
-                <div class="col-3 g-3" v-for="card in cards.listCards" v-show="card.archetype === 'Alien'">
-                    <AppCard />
-                </div>
+                <AppCard v-for="card in cards.listCards" :cardName="card.name" :cardImg="card.card_images[0].image_url"
+                    :cardArchetype="card.archetype" />
             </div>
         </div>
     </main>
@@ -40,6 +39,7 @@ main {
     background-image: url(../assets/img/hieroglyphs-bg.png);
     color: whitesmoke;
     padding: 8rem 2rem;
+    padding-bottom: 2rem;
 
 
     .found {

@@ -14,7 +14,7 @@ export default {
 
 <template>
     <header class="d-flex align-items-center justify-content-between">
-        <div class="d-flex">
+        <div class="d-flex align-items-center">
             <img width="200" class="img-fluid ms-5 me-3" src="../assets/img/yu-gi-oh-logo.png" alt="">
             <h1>yu-gi-oh api</h1>
         </div>
